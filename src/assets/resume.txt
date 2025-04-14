@@ -1,0 +1,44 @@
+Yared Kassa
+Adiss Ababa, Ethiopia
+Phone: 0924652979
+Email: yaredk393@gmail.com
+LinkedIn: https://www.linkedin.com/in/yared-kassa-81865a343
+
+
+Summary
+Aspiring software engineer with a solid foundation in web development and mobile application design. Proficient in React JS, HTML, CSS, JavaScript, and Tailwind CSS, with practical experience from an internship at Kachamale Technology. Committed to leveraging strong programming skills and creativity to deliver efficient solutions.
+
+Skills
+Programming Languages: JavaScript, HTML, CSS
+Frameworks / Libraries: React JS, Tailwind CSS
+Version Control: Git, GitHub
+Mobile Application Development: JavaFX
+
+
+Education
+Bachelor of Science in Software Engineering
+Woldia University, Woldia, Ethiopia
+
+
+Experience
+Internship
+Kachamale Technology | adiss Ababa, Ethiopia
+
+Assisted in developing and maintaining web applications with a focus on user interface and user experience.
+Collaborated with a team of developers to create efficient code and deliver projects on time.
+
+
+Projects
+Library Management System (JavaFX)
+Developed a desktop application to manage library operations such as book issuance, returns, and cataloging.
+Healthcare Finder (Mobile Application)
+Created a mobile application that helps users find healthcare facilities nearby based on their needs.
+Class Assignments
+Participated in various class assignments that involved developing small-scale applications using React JS and other technologies.
+
+Certifications
+Fundamentals of Web Development
+Udacity | www.udacity.com/certificate/e/035546a8-dfab-11ef-9e06-ebe71a3dd25b 
+
+Sincerely,
+Yared Kassa
