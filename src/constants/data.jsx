@@ -1,4 +1,4 @@
-import projectImage1 from "../assets/portfolio.png";
+import projectImage1 from "../assets/propertyMS.png";
 import projectImage2 from "../assets/healthcare.png";
 import projectImage3 from "../assets/javafx.png";
  import { BiCodeAlt, BiMobileAlt, BiPalette, BiSearchAlt } from "react-icons/bi";
@@ -15,11 +15,11 @@ export const menuItems = [
 export const projects = [
   {
     id: 1,
-    title: "Responsive Portfolio Website",
+    title: "WLDU Property Management System",
     image: projectImage1,
-    link:"https://www.github.com/yaredKassa1",
+    link:"https://github.com/yaredKassa1/Property-Management-System",
     description:
-      "A sleek and fully responsive portfolio website to showcase skills, projects, and experience. Built using React js and TailwindCSS with modern design practices.",
+      "Developed a web application for managing properties, tenants, and maintenance requests, streamlining the property management process.",
   },
   {
     id: 2,
@@ -58,9 +58,9 @@ export const services = [
     icon: BiPalette,
   },
   {
-    title: "Class Assignments",
+    title: "Internship Experience",
     description:
-      "Participated in various class assignments that involved developing small-scale applications using React JS and other technologies.",
+      "Gained hands-on experience in software development through internships, where I developed small-scale applications using React JS and other technologies.",
     icon: BiSearchAlt,
   },
 ];

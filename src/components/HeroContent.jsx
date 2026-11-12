@@ -22,7 +22,7 @@ const HeroContent = ({variants}) => {
     <motion.div variants={variants} className='text-left md:max-w-72 lg:max-w-lg'>
       <p className='text-xl font-medium text-blue-300'> Yared Kassa</p>
       <h2 className='mt-4 font-serif text-3xl font-bold tracking-wide text-white/80 md:text-4xl lg:mt-8 lg:text-5xl'>Software Engineer</h2>
-      <p className='mt-4 text-white/40 md:text-lg'>I am a passionate software engineer with a strong foundation in developing innovative software solutions. Currently pursuing my studies at Woldia University, I Specialize in software development, system design, and problem-solving. My interest lies in creating applications that enhance user experience and drive efficiency.</p>
+      <p className='mt-4 text-white/40 md:text-lg'>I am a software engineer and Woldia University graduate with expertise in software development, system design, and problem-solving. I build applications that enhance user experience and drive efficiency, and I’m now looking for opportunities to apply my skills and grow as a developer.</p>
       <div className='flex items-center gap-2 mt-5'>
         <Button onClick={handleLinkedIn}>Contact Me</Button>
        <Button variant='outline' onClick={handleDownload}>My Resume</Button> 
