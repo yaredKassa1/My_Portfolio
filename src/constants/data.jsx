@@ -5,17 +5,18 @@ import projectImage3 from "../assets/javafx.png";
 import { FaEnvelope, FaLinkedin, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 
 export const menuItems = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Skills", href: "#services" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/#about" },
+  { label: "Projects", href: "/projects" },
+  { label: "Skills", href: "/skills" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export const projects = [
   {
     id: 1,
     title: "WLDU Property Management System",
+    category: "Web application",
     image: projectImage1,
     link:"https://github.com/yaredKassa1/Property-Management-System",
     description:
@@ -24,6 +25,7 @@ export const projects = [
   {
     id: 2,
     title: "Healthcare Finder",
+    category: "Mobile application",
     image: projectImage2,
     link:"https://github.com/yaredKassa1/health_care_finder",
     description:
@@ -32,6 +34,7 @@ export const projects = [
   {
     id: 3,
     title: "Library Management System",
+    category: "Desktop application",
     image: projectImage3,
     link:"https://github.com/yaredKassa1/javafx-assignment",
     description:

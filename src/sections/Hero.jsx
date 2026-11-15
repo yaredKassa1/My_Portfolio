@@ -1,34 +1,51 @@
-import { contactDetails, projects } from '../constants/data'
+import { contactDetails, projects, words } from '../constants/data'
+
+const profileFields = [
+  { label: 'user', value: 'Yared Kassa' },
+  { label: 'role', value: 'Software Engineer' },
+  { label: 'focus', value: 'Web development · Application development · Problem solving' },
+  { label: 'location', value: 'Addis Ababa, Ethiopia (UTC+3)' },
+  { label: 'education', value: 'Woldia University graduate' },
+  { label: 'stack', value: 'React · JavaScript · Node.js · SQL · Git' },
+]
 
 const Hero = () => {
   const email = contactDetails.find((contact) => contact.type === 'Email')
 
   return (
-    <section className="page-section intro-section" id="home">
-      <p className="section-kicker">~/home</p>
-      <h1>Hi, I’m Yared Kassa.</h1>
-      <p className="intro-role">Software Engineer <span>·</span> Addis Ababa, Ethiopia</p>
-      <p className="intro-copy">
-        I’m a Woldia University graduate who enjoys building useful software and solving
-        real-world problems. Explore a few of my projects, the tools I work with, and get in touch.
-      </p>
+    <section className="home-terminal" id="home">
+      <div className="connection-bar">
+        <span className="connection-indicator" aria-hidden="true">●</span>
+        <span>portfolio online</span>
+        <span className="connection-separator" aria-hidden="true">·</span>
+        <a href={email.link}>{email.value}</a>
+        <span className="connection-separator" aria-hidden="true">·</span>
+        <span>open to opportunities</span>
+      </div>
 
-      <div className="terminal-block">
-        <p className="block-heading">— RECENT</p>
-        {projects.slice(0, 3).map((project) => (
-          <a className="terminal-row recent-row" href={project.link} key={project.id} target="_blank" rel="noreferrer">
-            <span className="row-date">project</span>
-            <span className="row-path">{project.title}</span>
-            <span className="row-arrow" aria-hidden="true">→</span>
-          </a>
-        ))}
-        {email && (
-          <a className="terminal-row recent-row" href={email.link}>
-            <span className="row-date">contact</span>
-            <span className="row-path">{email.value}</span>
-            <span className="row-arrow" aria-hidden="true">→</span>
-          </a>
-        )}
+      <div className="profile-console">
+        <img className="profile-logo" src="/yared-logo.png" alt="Yared Kassa Y logo" />
+        <dl className="profile-fields">
+          {profileFields.map(({ label, value }) => (
+            <div className="profile-field" key={label}>
+              <dt>{label}</dt>
+              <span className="profile-dash" aria-hidden="true">—</span>
+              <dd>{value}</dd>
+            </div>
+          ))}
+          <div className="profile-field">
+            <dt>available</dt>
+            <span className="profile-dash" aria-hidden="true">—</span>
+            <dd><a href="/#contact">Open to software development opportunities</a></dd>
+          </div>
+        </dl>
+      </div>
+
+      <div className="profile-statusbar">
+        <span><strong>projects</strong> {projects.length}</span>
+        <span><strong>skills</strong> {words.length}</span>
+        <span><strong>location</strong> Ethiopia</span>
+        <span><strong>status</strong> available</span>
       </div>
     </section>
   )

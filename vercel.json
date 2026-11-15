@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/skills", "destination": "/index.html" },
+    { "source": "/projects", "destination": "/index.html" }
+  ]
+}
