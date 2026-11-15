@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Header from './sections/Header'
 import Hero from './sections/Hero'
 import Projects from './sections/Projects'
@@ -10,9 +10,15 @@ import SkillsPage from './sections/SkillsPage'
 import ProjectsPage from './sections/ProjectsPage'
 
 const App = () => {
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState(() => (
+    window.localStorage.getItem('portfolio-theme') === 'light' ? 'light' : 'dark'
+  ))
   const path = window.location.pathname.replace(/\/+$/, '') || '/'
   const page = path === '/skills' ? 'skills' : path === '/projects' ? 'projects' : 'home'
+
+  useEffect(() => {
+    window.localStorage.setItem('portfolio-theme', theme)
+  }, [theme])
 
   return (
     <div className={`portfolio ${theme}`}>
