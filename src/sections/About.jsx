@@ -1,4 +1,4 @@
-import resume from '../assets/resume.txt'
+import resume from '../assets/Yared_Kassa_CV.docx'
 
 const About = () => (
   <section className="page-section content-section" id="about">
@@ -9,7 +9,7 @@ const About = () => (
         development, system design, and problem-solving. I like turning ideas into approachable,
         practical experiences and am looking for opportunities to keep learning and contribute.
       </p>
-      <a className="text-link" href={resume} download="Yared_Kassa_Resume.txt">
+      <a className="text-link" href={resume} download="yared-kassa-cv.docx">
         Download my resume <span aria-hidden="true">→</span>
       </a>
     </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from '../components/Button'
 import { motion } from 'framer-motion'
-import resume from '../assets/resume.txt'  
+import resume from '../assets/Yared_Kassa_CV.docx'
 
 const HeroContent = ({variants}) => {
 
@@ -9,7 +9,7 @@ const HeroContent = ({variants}) => {
 
     const link = document.createElement('a');
     link.href = resume;
-    link.download = 'Yared_Kassa_Resume.txt';
+    link.download = 'yared-kassa-cv.docx';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
