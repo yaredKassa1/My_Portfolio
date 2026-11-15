@@ -17,7 +17,14 @@ const Contact = () => {
     const formData = new FormData(event.currentTarget)
     const subject = `Portfolio message from ${formData.get('name')}`
     const body = `From: ${formData.get('name')} (${formData.get('email')})\n\n${formData.get('message')}`
-    window.location.href = `${email.link}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    const query = new URLSearchParams({
+      view: 'cm',
+      fs: '1',
+      to: email.value,
+      su: subject,
+      body,
+    })
+    window.location.assign(`https://mail.google.com/mail/?${query.toString()}`)
   }
 
   return (
@@ -46,6 +53,7 @@ const Contact = () => {
           <textarea name="message" rows="5" required />
         </label>
         <button type="submit">[ send_message ]</button>
+        <p className="form-note">Opens a pre-filled Gmail draft. Review it and press Send in Gmail.</p>
       </form>
     </section>
   )
