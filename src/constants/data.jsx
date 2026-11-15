@@ -5,10 +5,10 @@ import projectImage3 from "../assets/javafx.png";
 import { FaEnvelope, FaLinkedin, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 
 export const menuItems = [
-  { label: "Home", href: "#" },
-  { label: "Projects", href: "#projects" },
+  { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
+  { label: "Projects", href: "#projects" },
+  { label: "Skills", href: "#services" },
   { label: "Contact", href: "#contact" },
 ];
 

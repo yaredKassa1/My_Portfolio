@@ -1,51 +1,53 @@
-import React, { useRef } from 'react'
-import SectionTitle from '../components/SectionTitle'
-import contactImage from '../assets/contact.svg'
 import { contactDetails } from '../constants/data'
-import ContactDetailCard from '../components/ContactDetailCard'
-import { motion, useInView } from 'framer-motion'
 
 const Contact = () => {
-  const sectionRef=useRef(null)
-  const isInView=useInView(sectionRef);
-
-  const fadeInVariants = {
-    hidden: { y:20, opacity: 0 },
-    visible: { y:0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
-  } 
-  const staggerContainer = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.3,
-      }
+  const email = contactDetails.find((contact) => contact.type === 'Email')
+  const contactRows = [
+    { label: 'availability', value: 'Open to software development opportunities' },
+    ...contactDetails.map(({ type, value, link }) => ({ label: type.toLowerCase(), value, link })),
+    {
+      label: 'github',
+      value: 'github.com/yaredKassa1',
+      link: 'https://github.com/yaredKassa1',
     },
+  ]
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    const formData = new FormData(event.currentTarget)
+    const subject = `Portfolio message from ${formData.get('name')}`
+    const body = `From: ${formData.get('name')} (${formData.get('email')})\n\n${formData.get('message')}`
+    window.location.href = `${email.link}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
   }
 
   return (
-    <motion.section className='lg:py-20 px-4 py-16' id='contact' 
-     ref={sectionRef}
-     variants={staggerContainer}
-     initial="hidden"
-     animate={isInView ? "visible" : "hidden"}>
-      <SectionTitle title="Contact Me" />
-      <div className='container mt-10 flex flex-col gap-10 rounded-2xl border-2 border-white/10 bg-white/5 p-10 md:flex-row'>
-        <motion.div className='flex flex-col items-center justify-center' variants={fadeInVariants}>
-        <img src={contactImage} alt="Contact" className='h-40' />
-        </motion.div>
-        <motion.div className='flex flex-col gap-5 flex-1' variants={fadeInVariants}> 
-          <h1 className='font-serif font-bold text-3xl text-white/70'>Get in Touch</h1>
-          <p className='text-white/60'>If you have any questions or want to work together, feel free to reach out!</p>
-          <motion.div className='flex flex-col gap-5' variants={staggerContainer}>
-            {contactDetails.map((contact, innerKey)=>(
-              <motion.div key={innerKey} variants={fadeInVariants}>
-                <ContactDetailCard contact={contact} />
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
+    <section className="page-section content-section contact-section" id="contact">
+      <p className="section-kicker">— CONTACT</p>
+      <div className="contact-details">
+        {contactRows.map(({ label, value, link }) => (
+          <div className="contact-row" key={label}>
+            <span className="contact-label">{label}</span>
+            <span className="contact-arrow" aria-hidden="true">→</span>
+            {link ? <a href={link}>{value}</a> : <span>{value}</span>}
+          </div>
+        ))}
       </div>
-    </motion.section>
+      <form className="contact-form" onSubmit={handleSubmit}>
+        <label>
+          <span>NAME</span>
+          <input autoComplete="name" name="name" required />
+        </label>
+        <label>
+          <span>EMAIL</span>
+          <input autoComplete="email" name="email" type="email" required />
+        </label>
+        <label>
+          <span>MESSAGE</span>
+          <textarea name="message" rows="5" required />
+        </label>
+        <button type="submit">[ send_message ]</button>
+      </form>
+    </section>
   )
 }
 

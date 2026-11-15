@@ -1,29 +1,36 @@
-import HeroContent from '../components/HeroContent'
-import HeroImage from '../components/HeroImage'
-import { motion } from 'framer-motion'
+import { contactDetails, projects } from '../constants/data'
 
-const Hero = ({ menuOpen }) => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 2, ease: "easeOut" } },
-  } 
-  const contentVariants = {
-    hidden: { x: -50, opacity: 0 },
-    visible: { x: 0, opacity: 1, transition: { duration: 0.5, ease: "easeOut" } },
-  }
-  const imageVariants = {
-    hidden: { y: -50, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.5, ease: "easeOut", delay: 0.2 } },
-  }
+const Hero = () => {
+  const email = contactDetails.find((contact) => contact.type === 'Email')
+
   return (
-    <motion.section className='overflow-hidden ' id='#' initial="hidden" animate="visible" variants={containerVariants}>
-      <div className={` container transition-all duration-300 ${menuOpen ? "px-10 blur-sm" : ""}`}>
-        <div className='relative flex h-screen flex-col-reverse items-center md:flex-row'>
-           <HeroContent variants={contentVariants}/>
-           <HeroImage variants={imageVariants}/>
-        </div>
+    <section className="page-section intro-section" id="home">
+      <p className="section-kicker">~/home</p>
+      <h1>Hi, I’m Yared Kassa.</h1>
+      <p className="intro-role">Software Engineer <span>·</span> Addis Ababa, Ethiopia</p>
+      <p className="intro-copy">
+        I’m a Woldia University graduate who enjoys building useful software and solving
+        real-world problems. Explore a few of my projects, the tools I work with, and get in touch.
+      </p>
+
+      <div className="terminal-block">
+        <p className="block-heading">— RECENT</p>
+        {projects.slice(0, 3).map((project) => (
+          <a className="terminal-row recent-row" href={project.link} key={project.id} target="_blank" rel="noreferrer">
+            <span className="row-date">project</span>
+            <span className="row-path">{project.title}</span>
+            <span className="row-arrow" aria-hidden="true">→</span>
+          </a>
+        ))}
+        {email && (
+          <a className="terminal-row recent-row" href={email.link}>
+            <span className="row-date">contact</span>
+            <span className="row-path">{email.value}</span>
+            <span className="row-arrow" aria-hidden="true">→</span>
+          </a>
+        )}
       </div>
-    </motion.section>
+    </section>
   )
 }
 
